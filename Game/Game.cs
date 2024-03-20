@@ -6,7 +6,7 @@ namespace BowlingGame
     private List<Frame> _frames = new List<Frame>(_framesCapacity);
     private int _currentFrameIndex = 0;
     private int _totalScore = 0;
-    public bool Complete { get; set; } = false;
+    public bool Complete { get; private set; } = false;
 
     public Game()
     {
