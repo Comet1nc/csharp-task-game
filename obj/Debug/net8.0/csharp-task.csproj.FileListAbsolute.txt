@@ -12,3 +12,4 @@ C:\Users\zrosj\Desktop\csharp-task\obj\Debug\net8.0\refint\csharp-task.dll
 C:\Users\zrosj\Desktop\csharp-task\obj\Debug\net8.0\csharp-task.pdb
 C:\Users\zrosj\Desktop\csharp-task\obj\Debug\net8.0\csharp-task.genruntimeconfig.cache
 C:\Users\zrosj\Desktop\csharp-task\obj\Debug\net8.0\ref\csharp-task.dll
+C:\Users\zrosj\Desktop\csharp-task\obj\Debug\net8.0\csharp-task.sourcelink.json
