@@ -3,14 +3,11 @@ using BowlingGame;
 
 var game = new Game();
 
-while (true)
+while (game.Complete)
 {
   Console.WriteLine("Enter number of pins:");
   int rolls = GetIntFromUser();
-  if (game.Roll(rolls))
-  {
-    break;
-  }
+  game.Roll(rolls);
 }
 Console.WriteLine("Total Score: " + game.GetScore());
 

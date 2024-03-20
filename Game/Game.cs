@@ -6,6 +6,7 @@ namespace BowlingGame
     private List<Frame> _frames = new List<Frame>(_framesCapacity);
     private int _currentFrameIndex = 0;
     private int _totalScore = 0;
+    public bool Complete { get; set; } = false;
 
     public Game()
     {
@@ -21,28 +22,32 @@ namespace BowlingGame
       _frames.Add(new TenthFrame());
     }
 
-    public bool Roll(int pins)
+    public void Roll(int pins)
     {
       var currentFrame = _frames[_currentFrameIndex];
 
       currentFrame.Roll(pins);
 
-      var score = _frames[_currentFrameIndex].Counter.CountScore(_currentFrameIndex, _frames);
+      var frameScore = currentFrame.Counter.CountScore(_currentFrameIndex, _frames);
 
       _totalScore = CountTotalScore(_currentFrameIndex);
 
-      Console.WriteLine("Frame " + (_currentFrameIndex + 1) + "/10 | Frame Score: " + score + " | Total Score: " + (_totalScore + score));
+      DisplayScoreAfterRoll(frameScore);
 
       if (currentFrame.CurrentRoll == null)
       {
         if (_currentFrameIndex == 9)
         {
           DisplayEndGameText();
-          return true;
+          Complete = true;
         }
         _currentFrameIndex++;
       };
-      return false;
+    }
+
+    public void DisplayScoreAfterRoll(int frameScore)
+    {
+      Console.WriteLine("Frame " + (_currentFrameIndex + 1) + "/10 | Frame Score: " + frameScore + " | Total Score: " + (_totalScore + frameScore));
     }
 
     private void DisplayEndGameText()
