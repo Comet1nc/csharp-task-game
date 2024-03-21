@@ -47,14 +47,14 @@ namespace BowlingGame
 
     public void DisplayScoreAfterRoll(int frameScore)
     {
-      Console.WriteLine("Frame " + (_currentFrameIndex + 1) + "/10 | Frame Score: " + frameScore + " | Total Score: " + (_totalScore + frameScore));
+      Console.WriteLine($"Frame {_currentFrameIndex + 1} /10 | Frame Score: {frameScore} | Total Score: {_totalScore + frameScore}");
     }
 
     private void DisplayEndGameText()
     {
       Console.WriteLine("----------------------------------");
       Console.WriteLine("Congratulations! Game is finished!");
-      Console.WriteLine("TOTAL SCORE: " + _totalScore);
+      Console.WriteLine($"TOTAL SCORE: {_totalScore}");
     }
 
     private int CountTotalScore(int maxIndex)
@@ -79,7 +79,7 @@ namespace BowlingGame
         int frameScore = _frames[i].Counter.CountScore(i, _frames);
         totalScore += frameScore;
 
-        Console.WriteLine("Frame: " + (i + 1) + " / Frame score: " + frameScore + " / Total score: " + totalScore);
+        Console.WriteLine($"Frame: {i + 1} / Frame score: {frameScore} / Total score: {totalScore}");
       }
 
       return totalScore;
